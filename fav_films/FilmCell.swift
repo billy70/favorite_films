@@ -26,4 +26,10 @@ class FilmCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configureCell(film: FavoriteFilms) {
+        filmTitle.text = film.filmTitle
+        filmImage.image = film.getImageForFilm()
+        filmDescription.text = film.filmDescription
+        filmLink.text = film.filmLink
+    }
 }
