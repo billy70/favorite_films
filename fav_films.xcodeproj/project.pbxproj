@@ -17,6 +17,7 @@
 		D3E44D871CBEBC8300176422 /* FavoriteFilms.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E44D851CBEBC8300176422 /* FavoriteFilms.swift */; };
 		D3E44D8C1CBEC04000176422 /* NewFilmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E44D8B1CBEC04000176422 /* NewFilmVC.swift */; };
 		D3E44D8E1CBEC06800176422 /* FilmDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E44D8D1CBEC06800176422 /* FilmDetailsVC.swift */; };
+		D3E44D901CBEC1F900176422 /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E44D8F1CBEC1F900176422 /* FilmCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D3E44D851CBEBC8300176422 /* FavoriteFilms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteFilms.swift; path = ../FavoriteFilms.swift; sourceTree = "<group>"; };
 		D3E44D8B1CBEC04000176422 /* NewFilmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFilmVC.swift; sourceTree = "<group>"; };
 		D3E44D8D1CBEC06800176422 /* FilmDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmDetailsVC.swift; sourceTree = "<group>"; };
+		D3E44D8F1CBEC1F900176422 /* FilmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		D3E44D891CBEBE8700176422 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3E44D8F1CBEC1F900176422 /* FilmCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D37093081CBD6ECC00921966 /* MainSceneVC.swift in Sources */,
+				D3E44D901CBEC1F900176422 /* FilmCell.swift in Sources */,
 				D3E44D871CBEBC8300176422 /* FavoriteFilms.swift in Sources */,
 				D370930E1CBD6ECC00921966 /* fav_films.xcdatamodeld in Sources */,
 				D3E44D8C1CBEC04000176422 /* NewFilmVC.swift in Sources */,
