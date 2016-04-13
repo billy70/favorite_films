@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MainSceneVC: UIViewController {
 
@@ -20,12 +21,32 @@ class MainSceneVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        fetchAndSetResults()
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    func fetchAndSetResults() {
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = app.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "FavoriteFilms")
+        
+        do {
+            let results = try context.executeFetchRequest(fetchRequest)
+            self.films = results as! [FavoriteFilms]
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+    }
 
 }
 
