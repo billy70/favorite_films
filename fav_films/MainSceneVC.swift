@@ -10,6 +10,10 @@ import UIKit
 
 class MainSceneVC: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var films: [FavoriteFilms] = [FavoriteFilms]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,3 +27,32 @@ class MainSceneVC: UIViewController {
 
 }
 
+extension MainSceneVC: UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return films.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        guard (indexPath.row < films.count) else {
+            return FilmCell()
+        }
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier("filmCell") as? FilmCell {
+            cell.configureCell(films[indexPath.row])
+            return cell
+        } else {
+            return FilmCell()
+        }
+    }
+}
+
+extension MainSceneVC: UITableViewDelegate {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+}
