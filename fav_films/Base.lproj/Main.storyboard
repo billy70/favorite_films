@@ -79,6 +79,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.36905256910000001" green="0.3712773063" blue="0.48701923079999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="filmDescription" destination="cVy-9L-D8r" id="PMI-d9-wJW"/>
+                                            <outlet property="filmImage" destination="qZ5-TX-lMA" id="XuG-va-0Mq"/>
+                                            <outlet property="filmLink" destination="UfV-5V-2Ml" id="TPh-ZW-BCL"/>
+                                            <outlet property="filmTitle" destination="Lsc-4A-Wot" id="Kl4-aY-bZY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

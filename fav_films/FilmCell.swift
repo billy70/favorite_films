@@ -10,6 +10,11 @@ import UIKit
 
 class FilmCell: UITableViewCell {
 
+    @IBOutlet weak var filmTitle: UILabel!
+    @IBOutlet weak var filmImage: UIImageView!
+    @IBOutlet weak var filmDescription: UILabel!
+    @IBOutlet weak var filmLink: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +25,5 @@ class FilmCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
