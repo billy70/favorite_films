@@ -205,6 +205,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveButtonTapped:" destination="brZ-ka-3Mo" eventType="touchUpInside" id="fmN-bb-gGf"/>
                                     <segue destination="DN4-G7-f7q" kind="show" id="NwJ-gu-8JR"/>
                                 </connections>
                             </button>
@@ -217,6 +218,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="brZ-ka-3Mo" eventType="touchUpInside" id="1OB-E6-z7r"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TeK-yn-nuh">
                                 <rect key="frame" x="16" y="68" width="288" height="440"/>
@@ -280,6 +284,13 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="filmDescription" destination="dTm-2g-tAd" id="Ngl-Zl-g7e"/>
+                        <outlet property="filmImage" destination="rNF-j7-xan" id="dH5-SQ-dn4"/>
+                        <outlet property="filmLink" destination="4gW-7A-8mj" id="6yZ-bl-GoH"/>
+                        <outlet property="filmPlot" destination="zIr-iG-98h" id="l9h-Gr-VUf"/>
+                        <outlet property="filmTitle" destination="mgh-j3-x3R" id="YVI-L2-f10"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbx-xa-Qda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

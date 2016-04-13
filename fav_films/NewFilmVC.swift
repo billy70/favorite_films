@@ -10,6 +10,14 @@ import UIKit
 
 class NewFilmVC: UIViewController {
 
+    @IBOutlet weak var filmImage: UIImageView!
+    @IBOutlet weak var filmTitle: UITextField!
+    @IBOutlet weak var filmDescription: UITextView!
+    @IBOutlet weak var filmPlot: UITextView!
+    @IBOutlet weak var filmLink: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +40,10 @@ class NewFilmVC: UIViewController {
     }
     */
 
+    @IBAction func cancelButtonTapped(sender: AnyObject) {
+    }
+    
+    @IBAction func saveButtonTapped(sender: AnyObject) {
+    }
+    
 }
