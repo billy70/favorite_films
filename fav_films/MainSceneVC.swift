@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainSceneVC.swift
 //  fav_films
 //
 //  Created by William L. Marr III on 4/12/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainSceneVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
