@@ -22,6 +22,14 @@ class NewFilmVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        filmImage.image = nil
+        filmTitle.text = ""
+        filmDescription.text = "\n\n\n\n"
+        filmPlot.text = "\n\n\n\n"
+        filmLink.text = ""
+        
+        filmImage.layer.cornerRadius = 5.0
+        filmImage.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,9 +49,11 @@ class NewFilmVC: UIViewController {
     */
 
     @IBAction func cancelButtonTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
 }
