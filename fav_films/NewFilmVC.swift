@@ -16,13 +16,12 @@ class NewFilmVC: UIViewController {
     @IBOutlet weak var filmPlot: UITextView!
     @IBOutlet weak var filmLink: UITextField!
     
-    
+    var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        filmImage.image = nil
         filmTitle.text = ""
         filmDescription.text = "\n\n\n\n"
         filmPlot.text = "\n\n\n\n"
@@ -30,6 +29,8 @@ class NewFilmVC: UIViewController {
         
         filmImage.layer.cornerRadius = 5.0
         filmImage.clipsToBounds = true
+        
+        loadImagePicker()
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,4 +57,21 @@ class NewFilmVC: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    @IBAction func imageTapped(sender: UIGestureRecognizer) {
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+}
+
+
+extension NewFilmVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func loadImagePicker() {
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        filmImage.image = image
+    }
 }

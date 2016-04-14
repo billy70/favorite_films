@@ -224,22 +224,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TeK-yn-nuh">
                                 <rect key="frame" x="16" y="68" width="288" height="440"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalCompressionResistancePriority="760" image="Film_Favs_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rNF-j7-xan">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="110"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="760" image="Film_Favs_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rNF-j7-xan">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="y63-5p-gM7" appends="YES" id="ChJ-Mc-cq8"/>
+                                        </connections>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter movie title:" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mgh-j3-x3R">
-                                        <rect key="frame" x="0.0" y="121" width="288" height="30"/>
+                                        <rect key="frame" x="0.0" y="51" width="288" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" text="Why do you like this movie?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAT-d9-EGg">
-                                        <rect key="frame" x="0.0" y="162" width="288" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="92" width="288" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="740" keyboardDismissMode="interactive" text="line 1 line 2 line 3 line 4" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dTm-2g-tAd">
-                                        <rect key="frame" x="0.0" y="193.5" width="288" height="89"/>
+                                        <rect key="frame" x="0.0" y="123.5" width="288" height="159"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -264,7 +268,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="dTm-2g-tAd" firstAttribute="top" secondItem="TAT-d9-EGg" secondAttribute="bottom" constant="11" id="Nyl-cF-byc"/>
-                                    <constraint firstItem="rNF-j7-xan" firstAttribute="height" relation="greaterThanOrEqual" secondItem="TeK-yn-nuh" secondAttribute="height" multiplier="1:4" id="o0J-OU-pfl"/>
+                                    <constraint firstItem="rNF-j7-xan" firstAttribute="height" relation="lessThanOrEqual" secondItem="TeK-yn-nuh" secondAttribute="height" multiplier="1:4" constant="20" id="o0J-OU-pfl"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -292,6 +296,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbx-xa-Qda" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="y63-5p-gM7">
+                    <connections>
+                        <action selector="imageTapped:" destination="brZ-ka-3Mo" id="Wtm-70-2jX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1346" y="174"/>
         </scene>
