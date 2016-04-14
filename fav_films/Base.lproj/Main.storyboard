@@ -28,16 +28,16 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="230" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sMg-Gk-ZxU">
                                 <rect key="frame" x="0.0" y="113" width="320" height="455"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.36905256910000001" green="0.3712773063" blue="0.48701923079999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="filmCell" rowHeight="230" id="JlF-Un-SYC" customClass="FilmCell" customModule="fav_films" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="filmCell" rowHeight="230" id="JlF-Un-SYC" customClass="FilmCell" customModule="fav_films" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JlF-Un-SYC" id="N8l-3d-N3u">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="229.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Film_Favs_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="qZ5-TX-lMA">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Film_Favs_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="qZ5-TX-lMA">
                                                     <rect key="frame" x="8" y="36" width="141" height="155"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="155" id="QQS-zg-eLz"/>
@@ -79,6 +79,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.36905256910000001" green="0.3712773063" blue="0.48701923079999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.36905256910000001" green="0.3712773063" blue="0.48701923079999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="filmDescription" destination="cVy-9L-D8r" id="PMI-d9-wJW"/>
                                             <outlet property="filmImage" destination="qZ5-TX-lMA" id="XuG-va-0Mq"/>
@@ -87,6 +88,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="eyk-qQ-JeX"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="XsO-0W-In4"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.36905256914635426" green="0.37127730626705735" blue="0.48701923076923082" alpha="1" colorSpace="calibratedRGB"/>
@@ -108,7 +113,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="tableView" destination="sMg-Gk-ZxU" id="ogB-9d-OxS"/>
+                        <outlet property="tableView" destination="sMg-Gk-ZxU" id="BLi-W5-Q4L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

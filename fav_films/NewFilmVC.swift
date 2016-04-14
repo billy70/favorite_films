@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NewFilmVC: UIViewController {
 
@@ -23,8 +24,8 @@ class NewFilmVC: UIViewController {
 
         // Do any additional setup after loading the view.
         filmTitle.text = ""
-        filmDescription.text = "\n\n\n\n"
-        filmPlot.text = "\n\n\n\n"
+        filmDescription.text = ""
+        filmPlot.text = ""
         filmLink.text = ""
         
         filmImage.layer.cornerRadius = 5.0
@@ -54,7 +55,34 @@ class NewFilmVC: UIViewController {
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+        
+        if let title = filmTitle.text where title != "",
+            let description = filmDescription.text where description != "",
+            let plot = filmPlot.text where plot != "",
+            let link = filmLink.text where link != "" {
+                
+            let app = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context = app.managedObjectContext
+            let entity = NSEntityDescription.entityForName("FavoriteFilms", inManagedObjectContext: context)!
+            let film = FavoriteFilms(entity: entity, insertIntoManagedObjectContext: context)
+
+            // TODO: Need to add plot to data model and save it here.
+            film.filmTitle = title
+            film.filmDescription = description
+            film.filmLink = link
+            film.setImageForFilm(filmImage.image!)
+                
+            context.insertObject(film)
+            
+            // This do-try-catch block attempts to persist the data.
+            do {
+                try context.save()
+            } catch {
+                print("Could not save favorite film!")
+            }
+        }
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func imageTapped(sender: UIGestureRecognizer) {

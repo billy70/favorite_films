@@ -12,14 +12,11 @@ import CoreData
 class MainSceneVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+
     var films: [FavoriteFilms] = [FavoriteFilms]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.dataSource = self
-        tableView.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -47,14 +44,25 @@ class MainSceneVC: UIViewController {
             print(err.debugDescription)
         }
     }
-
 }
 
 extension MainSceneVC: UITableViewDataSource {
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return films.count
     }
-    
+}
+
+extension MainSceneVC: UITableViewDelegate {
+
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        print("selected row")
+    }
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         guard (indexPath.row < films.count) else {
@@ -67,15 +75,5 @@ extension MainSceneVC: UITableViewDataSource {
         } else {
             return FilmCell()
         }
-    }
-}
-
-extension MainSceneVC: UITableViewDelegate {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
