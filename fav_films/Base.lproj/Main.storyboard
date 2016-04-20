@@ -191,6 +191,13 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="filmDescription" destination="kCB-fi-bhj" id="QE4-qN-TD4"/>
+                        <outlet property="filmImage" destination="GDZ-5O-Tfy" id="jbv-Jl-Eg1"/>
+                        <outlet property="filmLink" destination="j7P-rK-0XF" id="Ofl-Kg-c65"/>
+                        <outlet property="filmPlot" destination="ahu-qC-zOf" id="Iwg-Rw-GMc"/>
+                        <outlet property="filmTitle" destination="bV3-nv-WPx" id="GJh-Co-wwH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12Q-cm-Fjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

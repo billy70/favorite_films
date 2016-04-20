@@ -30,6 +30,18 @@ class MainSceneVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowDetail" {
+            let filmDetailsVC = segue.destinationViewController as! FilmDetailsVC
+            
+            if let selectedFilmCell = sender as? FilmCell {
+                let indexPath = tableView.indexPathForCell(selectedFilmCell)!
+                let selectedFilm = films[indexPath.row]
+                filmDetailsVC.film = selectedFilm
+            }
+        }
+    }
 
     func fetchAndSetResults() {
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
