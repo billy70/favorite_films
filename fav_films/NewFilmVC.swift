@@ -66,9 +66,9 @@ class NewFilmVC: UIViewController {
             let entity = NSEntityDescription.entityForName("FavoriteFilms", inManagedObjectContext: context)!
             let film = FavoriteFilms(entity: entity, insertIntoManagedObjectContext: context)
 
-            // TODO: Need to add plot to data model and save it here.
             film.filmTitle = title
             film.filmDescription = description
+            film.filmPlot = plot
             film.filmLink = link
             film.setImageForFilm(filmImage.image!)
                 

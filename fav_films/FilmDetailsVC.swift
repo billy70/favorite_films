@@ -26,7 +26,7 @@ class FilmDetailsVC: UIViewController {
             filmTitle.text = film.filmTitle
             filmDescription.text = film.filmDescription
             filmLink.text = film.filmLink
-            filmPlot.text = "(FIXME - Need to retrieve from IMDB)"
+            filmPlot.text = film.filmPlot
             filmImage.image = film.getImageForFilm()
         }
     }
