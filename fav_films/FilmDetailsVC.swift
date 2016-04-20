@@ -22,6 +22,10 @@ class FilmDetailsVC: UIViewController {
     }
     
 
+    @IBAction func doneButtonTapped(sender: AnyObject) {
+        navigationController!.popViewControllerAnimated(true)
+    }
+    
     /*
     // MARK: - Navigation
 
